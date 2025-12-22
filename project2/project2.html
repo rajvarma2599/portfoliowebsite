@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website UX Overhaul - Raj Varma</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional modern styles for project detail page */
+        .project-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .project-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .project-content {
+            padding: 60px 0;
+        }
+        .section-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+        .section-card h2 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .feature-item {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .tools-used {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .tool {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        .results {
+            text-align: center;
+            background: #f4f4f4;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #2980b9;
+        }
+        .mockup-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Raj Varma</div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <div class="container">
+            <h1>E-commerce Website UX Overhaul</h1>
+            <p>A comprehensive redesign that simplified the checkout process and enhanced product discovery, resulting in a 25% reduction in cart abandonment.</p>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="section-card">
+                <h2><i class="fas fa-shopping-cart"></i> Project Overview</h2>
+                <p>Redesigned the user experience for an online retail platform, focusing on simplifying the checkout process and enhancing product discovery. Implemented A/B testing for design iterations, leading to a 25% reduction in cart abandonment and improved conversion rates. The overhaul prioritized user flow optimization and intuitive navigation to create a seamless shopping experience.</p>
+                <img src="https://via.placeholder.com/600x400/3498db/ffffff?text=E-commerce+Website+Mockup" alt="E-commerce Website Mockup" class="mockup-image">
+            </div>
+
+            <div class="section-card">
+                <h2><i class="fas fa-list-check"></i> Key Features Implemented</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Simplified Checkout Process</h3>
+                        <p>Streamlined the checkout flow to reduce steps and friction points.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-search"></i>
+                        <h3>Enhanced Product Discovery</h3>
+                        <p>Improved search and filtering to help users find products quickly.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-flask"></i>
+                        <h3>A/B Testing for Iterations</h3>
+                        <p>Conducted rigorous testing to validate design changes.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-route"></i>
+                        <h3>User Flow Optimization</h3>
+                        <p>Analyzed and optimized user journeys for better engagement.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Conversion Rate Improvement</h3>
+                        <p>Focused on elements that drive purchases and reduce abandonment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2><i class="fas fa-tools"></i> Tools & Technologies Used</h2>
+                <div class="tools-used">
+                    <span class="tool">Figma</span>
+                    <span class="tool">Adobe XD</span>
+                    <span class="tool">Optimizely</span>
+                    <span class="tool">Google Analytics</span>
+                </div>
+            </div>
+
+            <div class="section-card results">
+                <h2><i class="fas fa-trophy"></i> Results & Impact</h2>
+                <p>Achieved a 25% reduction in cart abandonment, with improved conversion rates and enhanced user satisfaction. The redesigned platform saw increased user engagement and positive feedback on the streamlined shopping experience.</p>
+                <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
+                    <div>
+                        <h3>25%</h3>
+                        <p>Reduction in Cart Abandonment</p>
+                    </div>
+                    <div>
+                        <h3>15%</h3>
+                        <p>Increase in Conversion Rate</p>
+                    </div>
+                    <div>
+                        <h3>4.6/5</h3>
+                        <p>User Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Raj Varma. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
