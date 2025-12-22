@@ -1,23 +1,15 @@
-# TODO: Create 5 Professional Websites
+# TODO: Apply Favicon to Website
 
-- [x] Create project folders (project1 to project5)
-- [x] Build project1: Fitness Tracker web app demo
-  - [x] Create index.html with dashboard layout
-  - [x] Create css/styles.css for responsive design
-  - [x] Create js/script.js for interactivity (charts, tracking)
-- [x] Build project2: E-commerce site
-  - [x] Create index.html with product catalog and cart
-  - [x] Create css/styles.css for modern e-commerce look
-  - [x] Create js/script.js for cart functionality
-- [x] Build project3: SaaS Analytics Dashboard
-  - [x] Create index.html with data visualization
-  - [x] Create css/styles.css for dashboard styling
-  - [x] Create js/script.js for charts and filters
-- [ ] Build project4: Fintech Startup Landing Page
-  - [ ] Create index.html with hero, features, testimonials
-  - [ ] Create css/styles.css for professional landing page
-  - [ ] Create js/script.js for any animations or forms
-- [x] Build project5: Social Media App Demo
-  - [x] Create index.html with feed and profiles
-  - [x] Create css/styles.css for social media UI
-  - [x] Create js/script.js for interactions (likes, comments)
+- [x] Edit index.html to add favicon links
+- [x] Edit project1.html to add favicon links
+- [x] Edit project2.html to add favicon links
+- [x] Edit project3.html to add favicon links
+- [x] Edit project4.html to add favicon links
+- [ ] Edit project5.html to add favicon links
+- [x] Edit project1/project1.html to add favicon links
+- [x] Edit project2/project2.html to add favicon links
+- [x] Edit project3/project3.html to add favicon links
+- [ ] Edit project4/project4.html to add favicon links
+- [x] Edit project4/index.html to add favicon links
+- [x] Edit project5/project5.html to add favicon links
+- [ ] Test the website to ensure favicon displays correctly
