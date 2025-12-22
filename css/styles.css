@@ -115,9 +115,21 @@ nav ul li a:hover {
     height: 40px;
 }
 
-.social-links svg {
+.social-links svg,
+.social-links img {
     width: 24px;
     height: 24px;
+    object-fit: contain;
+}
+
+.social-links img {
+    filter: brightness(0) invert(1);
+}
+
+.no-resize {
+    width: auto;
+    height: auto;
+    object-fit: none;
 }
 
 .social-links a:hover {
@@ -258,6 +270,54 @@ section h2 {
     border-bottom: none;
 }
 
+/* Certifications Section */
+.certifications-preview {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-cert {
+    margin-bottom: 2rem;
+}
+
+.main-cert-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.main-cert-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.other-certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.cert-image {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.cert-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
 /* Projects Section */
 .projects-grid {
     display: grid;
@@ -384,8 +444,13 @@ footer {
     }
 
     .skills-grid,
+    .other-certs-grid,
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .main-cert-image {
+        max-width: 100%;
     }
 
     section h2 {
