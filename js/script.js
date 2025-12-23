@@ -58,15 +58,34 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Visitor Counter
-let visitorCount = localStorage.getItem('visitorCount');
-if (visitorCount === null) {
-    visitorCount = 0;
-} else {
-    visitorCount = parseInt(visitorCount);
+async function updateVisitorCount() {
+    const visited = localStorage.getItem('visited');
+    if (!visited) {
+        try {
+            await fetch('https://api.countapi.xyz/hit/portfolio-visitor-count/visitor-count');
+            localStorage.setItem('visited', 'true');
+        } catch (error) {
+            console.error('Error incrementing count:', error);
+        }
+    }
+    try {
+        const response = await fetch('https://api.countapi.xyz/get/portfolio-visitor-count/visitor-count');
+        const data = await response.json();
+        document.getElementById('visitor-count').textContent = data.value;
+    } catch (error) {
+        console.error('Error fetching count:', error);
+        // Fallback to localStorage if API fails
+        let localCount = localStorage.getItem('localVisitorCount');
+        if (!localCount) {
+            localCount = 1;
+        } else {
+            localCount = parseInt(localCount) + 1;
+        }
+        localStorage.setItem('localVisitorCount', localCount);
+        document.getElementById('visitor-count').textContent = localCount;
+    }
 }
-visitorCount++;
-localStorage.setItem('visitorCount', visitorCount);
-document.getElementById('visitor-count').textContent = visitorCount;
+updateVisitorCount();
 
 // Animation on scroll
 document.addEventListener('DOMContentLoaded', function() {
