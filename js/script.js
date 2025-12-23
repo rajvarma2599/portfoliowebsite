@@ -57,6 +57,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Visitor Counter
+document.addEventListener('DOMContentLoaded', function() {
+    let visitorCount = localStorage.getItem('visitorCount');
+    if (visitorCount === null) {
+        visitorCount = 0;
+    } else {
+        visitorCount = parseInt(visitorCount);
+    }
+    visitorCount++;
+    localStorage.setItem('visitorCount', visitorCount);
+    document.getElementById('visitor-count').textContent = visitorCount;
+});
+
 // Animation on scroll
 document.addEventListener('DOMContentLoaded', function() {
     const observerOptions = {
