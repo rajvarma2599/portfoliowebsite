@@ -29,3 +29,30 @@ window.addEventListener('scroll', function() {
         }
     });
 });
+
+// Accordion functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            const content = this.nextElementSibling;
+
+            // Close all other accordions
+            accordionButtons.forEach(btn => {
+                btn.setAttribute('aria-expanded', 'false');
+                btn.nextElementSibling.style.maxHeight = '0';
+            });
+
+            // Toggle current accordion
+            if (!isExpanded) {
+                this.setAttribute('aria-expanded', 'true');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                this.setAttribute('aria-expanded', 'false');
+                content.style.maxHeight = '0';
+            }
+        });
+    });
+});
