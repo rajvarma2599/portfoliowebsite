@@ -5,6 +5,55 @@
     box-sizing: border-box;
 }
 
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation Classes */
+.animate-hero {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-section {
+    opacity: 1;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-stagger {
+    opacity: 1;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate-stagger.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
