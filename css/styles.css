@@ -26,10 +26,27 @@
     }
 }
 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(52, 152, 219, 0.8), 0 0 30px rgba(52, 152, 219, 0.6);
+    }
+}
+
 /* Animation Classes */
 .animate-hero {
-    opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
+    opacity: 1;
 }
 
 .animate-section {
@@ -113,10 +130,24 @@ nav ul li a:hover {
 
 /* Hero Section */
 #hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3a7bd5 100%);
     color: white;
     padding: 120px 0 80px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .hero-content {
@@ -125,6 +156,8 @@ nav ul li a:hover {
     align-items: center;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .profile-img {
@@ -132,37 +165,75 @@ nav ul li a:hover {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 2rem;
-    border: 5px solid white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 5px solid rgba(255,255,255,0.8);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 0 2px rgba(255,255,255,0.2);
     object-fit: cover;
-    filter: grayscale(100%);
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.4), 0 0 0 3px rgba(255,255,255,0.3);
 }
 
 .hero-text h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    background: linear-gradient(45deg, #ffffff, #e0f7ff, #b3e5fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: fadeInUp 1.2s ease-out;
 }
 
 .hero-text p {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    opacity: 0.95;
+    animation: fadeInUp 1.4s ease-out;
 }
 
 .social-links {
     display: inline-flex;
     gap: 1rem;
     margin: 1rem 0;
+    animation: fadeInUp 1.6s ease-out;
 }
 
 .social-links a {
-    color: white;
-    transition: color 0.3s;
+    color: #ffffff;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.5);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    opacity: 1;
+    visibility: visible;
+}
+
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.social-links a:hover::before {
+    left: 100%;
 }
 
 .social-links svg,
@@ -170,6 +241,9 @@ nav ul li a:hover {
     width: 24px;
     height: 24px;
     object-fit: contain;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 .social-links img {
@@ -183,7 +257,16 @@ nav ul li a:hover {
 }
 
 .social-links a:hover {
-    color: #3498db;
+    color: #ffffff;
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+    animation: glow 2s ease-in-out infinite;
+}
+
+.social-links a:hover svg,
+.social-links a:hover img {
+    transform: scale(1.1);
 }
 
 .resume-btn {
