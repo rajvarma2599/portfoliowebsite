@@ -680,3 +680,129 @@ footer {
         font-size: 2rem;
     }
 }
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    #hero {
+        padding: 80px 0 40px;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .social-links {
+        gap: 0.5rem;
+    }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-links svg,
+    .social-links img {
+        width: 20px;
+        height: 20px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+    }
+
+    .project {
+        padding: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-form button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .counter-display {
+        padding: 1.5rem;
+    }
+
+    #visitor-count {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .other-certs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (min-width: 1025px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.3rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .other-certs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    section h2 {
+        font-size: 3rem;
+    }
+}
