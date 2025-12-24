@@ -11,6 +11,7 @@
     <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
     <header>
@@ -22,6 +23,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -51,6 +53,12 @@
                     </a>
                     <a href="https://www.figma.com/@13f608b8_a6aa_4" target="_blank" rel="noopener" aria-label="Figma">
                         <img src="figma.png" alt="Figma" width="24" height="24">
+                    </a>
+                    <a href="https://www.fiverr.com/rajvarma25999" target="_blank" rel="noopener" aria-label="Fiverr">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <text x="12" y="16" text-anchor="middle" font-size="10" fill="currentColor">fi</text>
+                        </svg>
                     </a>
                 </div>
                 
@@ -169,6 +177,134 @@
             </div>
         </div>
     </section>
+
+    <section id="services" class="animate-section">
+        <div class="container">
+            <h2>Services</h2>
+            <p>Explore my professional services and choose the perfect package for your project.</p>
+            <div class="services-overview">
+                <div class="service-card animate-stagger">
+                    <h3>UI/UX Design</h3>
+                    <p>Comprehensive user research, wireframing, prototyping, and high-fidelity designs that create intuitive and engaging user experiences.</p>
+                </div>
+                <div class="service-card animate-stagger">
+                    <h3>Front-End Development</h3>
+                    <p>Responsive web development using HTML, CSS, JavaScript, and modern frameworks to bring designs to life.</p>
+                </div>
+                <div class="service-card animate-stagger">
+                    <h3>Consultation</h3>
+                    <p>Expert advice on design systems, user experience strategy, and technical implementation for your projects.</p>
+                </div>
+                <div class="service-card animate-stagger">
+                    <h3>Prototyping</h3>
+                    <p>Interactive prototypes and user testing to validate design concepts and ensure optimal user experience.</p>
+                </div>
+            </div>
+            <button id="open-modal" class="cta-button">View Service Packages</button>
+        </div>
+    </section>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Service Packages</h2>
+                <p class="subtitle">Choose the perfect package for your project</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">
+                    <p>Explore my professional UI/UX design and development services. Each package is tailored to meet different project needs and budgets.</p>
+                    <p><strong>All packages include:</strong> Unlimited revisions, source files, and ongoing support.</p>
+                </div>
+                <div class="service-packages">
+                    <div class="package starter-package" data-package="starter" data-price="75">
+                        <div class="package-header">
+                            <div class="package-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1m16.24-3.76l-4.24 4.24M7.76 16.24l-4.24 4.24m16.24 0l-4.24-4.24M7.76 7.76L3.52 3.52"></path>
+                                </svg>
+                            </div>
+                            <h3>Starter Package</h3>
+                            <div class="price-tag">$75</div>
+                        </div>
+                        <ul>
+                            <li>1-2 Screen Wireframes</li>
+                            <li>Basic UI Mockups (2-3 screens)</li>
+                            <li>Design System Overview</li>
+                            <li>1 Revision Round</li>
+                            <li>Source Files (Figma)</li>
+                            <li>Delivery: 3-5 Business Days</li>
+                        </ul>
+                        <button class="select-package">Select Package</button>
+                    </div>
+                    <div class="package recommended" data-package="professional" data-price="200">
+                        <div class="package-header">
+                            <div class="package-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </div>
+                            <h3>Professional Package</h3>
+                            <div class="price-tag">$200</div>
+                        </div>
+                        <ul>
+                            <li>Complete User Flow & Wireframes (5-8 screens)</li>
+                            <li>High-Fidelity UI Design with Style Guide</li>
+                            <li>Interactive Prototype (Figma)</li>
+                            <li>Usability Testing Report</li>
+                            <li>2 Revision Rounds</li>
+                            <li>Source Files & Assets</li>
+                            <li>Delivery: 7-10 Business Days</li>
+                        </ul>
+                        <button class="select-package">Select Package</button>
+                    </div>
+                    <div class="package enterprise-package" data-package="enterprise" data-price="450">
+                        <div class="package-header">
+                            <div class="package-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 21l18 0"></path>
+                                    <path d="M5 21V7l8-4v18"></path>
+                                    <path d="M19 21V11l-6-4"></path>
+                                    <path d="M9 9l0 0"></path>
+                                    <path d="M9 13l0 0"></path>
+                                    <path d="M9 17l0 0"></path>
+                                </svg>
+                            </div>
+                            <h3>Enterprise Package</h3>
+                            <div class="price-tag">$450</div>
+                        </div>
+                        <ul>
+                            <li>Full UX Audit & Strategy Consultation</li>
+                            <li>Comprehensive Wireframes & Prototypes (10+ screens)</li>
+                            <li>Complete UI Design System & Component Library</li>
+                            <li>Advanced Prototyping with Micro-Interactions</li>
+                            <li>User Testing & Iteration (2 rounds)</li>
+                            <li>Front-End Development Implementation</li>
+                            <li>Performance Optimization Recommendations</li>
+                            <li>3 Revision Rounds</li>
+                            <li>Source Files, Assets & Documentation</li>
+                            <li>Delivery: 14-18 Business Days</li>
+                        </ul>
+                        <button class="select-package">Select Package</button>
+                    </div>
+                </div>
+                <div id="checkout-section" class="checkout-section" style="display: none;">
+                    <div class="checkout-container">
+                        <h3>Ready to Get Started?</h3>
+                        <div class="selected-package-summary">
+                            <p id="selected-package-info"></p>
+                        </div>
+                        <div class="checkout-actions">
+                            <button id="pay-button" class="cta-button">Pay with Razorpay</button>
+                            <button id="cancel-checkout" class="cancel-btn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="faq" class="animate-section">
         <div class="container">

@@ -112,3 +112,91 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 });
+
+// Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('service-modal');
+    const openModalBtn = document.getElementById('open-modal');
+    const closeBtn = document.querySelector('.close');
+    const selectPackageBtns = document.querySelectorAll('.select-package');
+    const checkoutSection = document.getElementById('checkout-section');
+    const selectedPackageInfo = document.getElementById('selected-package-info');
+    const payButton = document.getElementById('pay-button');
+
+    let selectedPackage = null;
+
+    // Open modal
+    openModalBtn.addEventListener('click', function() {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        checkoutSection.style.display = 'none';
+        selectedPackage = null;
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            checkoutSection.style.display = 'none';
+            selectedPackage = null;
+        }
+    });
+
+    // Select package
+    selectPackageBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const packageElement = this.parentElement;
+            selectedPackage = {
+                name: packageElement.dataset.package,
+                price: parseInt(packageElement.dataset.price)
+            };
+
+            selectedPackageInfo.textContent = `Selected: ${selectedPackage.name}`;
+            checkoutSection.style.display = 'block';
+            checkoutSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Razorpay payment
+    payButton.addEventListener('click', function() {
+        if (!selectedPackage) {
+            alert('Please select a package first.');
+            return;
+        }
+
+        const options = {
+            key: 'rzp_live_RvPg1zgE38Kyd0', // Replace with your Razorpay key_id
+            amount: selectedPackage.price * 100, // Amount in paisa
+            currency: 'USD',
+            name: 'Raj Varma - UI/UX Services',
+            description: `Payment for ${selectedPackage.name}`,
+            handler: function(response) {
+                alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+                // Here you can send the payment details to your server
+                console.log(response);
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                checkoutSection.style.display = 'none';
+                selectedPackage = null;
+            },
+            prefill: {
+                name: '',
+                email: '',
+                contact: ''
+            },
+            theme: {
+                color: '#3498db'
+            }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+    });
+});
