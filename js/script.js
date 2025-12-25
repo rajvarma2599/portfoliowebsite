@@ -210,3 +210,27 @@ document.addEventListener('DOMContentLoaded', function() {
         rzp.open();
     });
 });
+
+// EmailJS Integration
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    emailjs.init('Kymz_TDjKYblXVOTL');
+
+    // Handle contact form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Send email using EmailJS
+            emailjs.sendForm('service_oc77p8b', 'template_gvgfey6', this)
+                .then(function() {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                }, function(error) {
+                    alert('Failed to send message. Please try again.');
+                    console.error('EmailJS error:', error);
+                });
+        });
+    }
+});

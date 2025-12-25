@@ -157,10 +157,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle form submission
     form.addEventListener('submit', function(e) {
-        // For demo purposes, prevent actual submission and show alert
         e.preventDefault();
-        alert('Thank you for submitting your project details! I will review your information and get back to you within 24 hours.');
-        // In a real scenario, you might want to actually submit the form or send data via AJAX
-        // form.submit();
+
+        // Collect form data
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+            if (data[key]) {
+                if (Array.isArray(data[key])) {
+                    data[key].push(value);
+                } else {
+                    data[key] = [data[key], value];
+                }
+            } else {
+                data[key] = value;
+            }
+        });
+
+        // Build formatted email body
+        let emailBody = `🎉 New Project Inquiry - ${config.name}\n\n`;
+        emailBody += `Hello Raj Varma,\n\n`;
+        emailBody += `You've received a new project inquiry for the ${config.name}. Here are the details:\n\n`;
+        emailBody += `📋 PROJECT DETAILS\n`;
+        emailBody += `==================\n\n`;
+
+        // Add each field with formatting
+        config.questions.forEach(question => {
+            const fieldName = question.label;
+            const fieldValue = data[fieldName] || 'Not provided';
+            emailBody += `🔸 ${fieldName}:\n`;
+            if (Array.isArray(fieldValue)) {
+                emailBody += `   ${fieldValue.join(', ')}\n\n`;
+            } else {
+                emailBody += `   ${fieldValue}\n\n`;
+            }
+        });
+
+        emailBody += `🚀 NEXT STEPS\n`;
+        emailBody += `============\n\n`;
+        emailBody += `1. Review the project details above\n`;
+        emailBody += `2. Check attached files (if any)\n`;
+        emailBody += `3. Respond to the client within 24 hours\n`;
+        emailBody += `4. Schedule a discovery call if interested\n\n`;
+        emailBody += `💼 CLIENT CONTACT\n`;
+        emailBody += `=================\n\n`;
+        emailBody += `Please reply to this email to connect with the client.\n\n`;
+        emailBody += `Best regards,\n`;
+        emailBody += `Raj Varma's Portfolio System\n`;
+        emailBody += `itzrajvarma@gmail.com\n\n`;
+        emailBody += `---\n`;
+        emailBody += `This email was generated from your portfolio website form submission.`;
+
+        // Encode for URL
+        const encodedBody = encodeURIComponent(emailBody);
+        const subject = encodeURIComponent(`${config.name} Project Details`);
+        const mailtoUrl = `mailto:itzrajvarma@gmail.com?subject=${subject}&body=${encodedBody}`;
+
+        // Open email client
+        window.location.href = mailtoUrl;
+
+        // Show confirmation
+        alert('Thank you for submitting your project details! Your email client should open with the formatted inquiry. Please send it to complete the submission.');
     });
 });
