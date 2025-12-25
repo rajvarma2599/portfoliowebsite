@@ -164,6 +164,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Cancel checkout
+    const cancelButton = document.getElementById('cancel-checkout');
+    cancelButton.addEventListener('click', function() {
+        checkoutSection.style.display = 'none';
+        selectedPackage = null;
+        selectedPackageInfo.textContent = '';
+    });
+
     // Razorpay payment
     payButton.addEventListener('click', function() {
         if (!selectedPackage) {
@@ -184,6 +192,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
                 checkoutSection.style.display = 'none';
+                // Redirect to services page with selected package
+                window.location.href = `services/services.html?package=${selectedPackage.name.toLowerCase()}`;
                 selectedPackage = null;
             },
             prefill: {
