@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const options = {
             key: 'rzp_live_RvPg1zgE38Kyd0', // Replace with your Razorpay key_id
             amount: selectedPackage.price * 100, // Amount in paisa
-            currency: 'USD',
+            currency: 'INR',
             name: 'Raj Varma - UI/UX Services',
             description: `Payment for ${selectedPackage.name}`,
             handler: function(response) {
