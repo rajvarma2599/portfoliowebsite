@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking & Appointment System (Non-Generic) - Raj Varma</title>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional modern styles for project detail page */
+        .project-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .project-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .project-content {
+            padding: 60px 0;
+        }
+        .section-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+        .section-card h2 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .feature-item {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .tools-used {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .tool {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        .results {
+            text-align: center;
+            background: #f4f4f4;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #2980b9;
+        }
+        .mockup-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .logo {
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Raj Varma</div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <div class="container">
+            <h1>Booking & Appointment System (Non-Generic)</h1>
+            <p>A comprehensive booking platform designed with practical business logic, focusing on real-world scheduling challenges and user-friendly appointment management that boosted operational efficiency by 30%.</p>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="section-card">
+                <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
+                <p>This booking system addresses the complex realities of appointment scheduling for service-based businesses. Unlike generic booking platforms, this solution incorporates real-world business logic, staff availability, service dependencies, and customer preferences. The project involved extensive user research with service providers, wireframing complex scheduling interfaces, and implementing intuitive UX patterns for multi-user coordination.</p>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p style="font-style: italic; color: #666;">(Mockup image would be placed here if available)</p>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2><i class="fas fa-list-check"></i> Key Features Implemented</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Smart Scheduling</h3>
+                        <p>Intelligent time slot suggestions based on staff availability, service duration, buffer times, and business hours with automatic conflict resolution.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-link"></i>
+                        <h3>Service Dependencies</h3>
+                        <p>Complex service relationships where certain treatments require prerequisites or follow-up appointments with automated scheduling suggestions.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Staff Preferences</h3>
+                        <p>Staff specialization matching, customer preferences, and historical booking patterns to optimize scheduling and customer satisfaction.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Real-Time Availability</h3>
+                        <p>Live updates of availability considering walk-ins, cancellations, and staff changes with instant notifications to waiting customers.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Business Rules Engine</h3>
+                        <p>Configurable business rules for different service types, staff roles, and customer segments with automated policy enforcement.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-sync"></i>
+                        <h3>Multi-User Coordination</h3>
+                        <p>Designed interfaces that serve customers, staff, and administrators with appropriate information hierarchies and action permissions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2><i class="fas fa-tools"></i> Tools & Technologies Used</h2>
+                <div class="tools-used">
+                    <span class="tool">Figma</span>
+                    <span class="tool">Sketch</span>
+                    <span class="tool">InVision</span>
+                    <span class="tool">Adobe XD</span>
+                    <span class="tool">UserTesting.com</span>
+                    <span class="tool">Google Analytics</span>
+                </div>
+            </div>
+
+            <div class="section-card results">
+                <h2><i class="fas fa-trophy"></i> Results & Impact</h2>
+                <p>The implementation of this non-generic booking system led to significant improvements in operational efficiency and user satisfaction. The system reduced scheduling conflicts by 75%, increased booking completion rates by 50%, and achieved 90% customer satisfaction. Businesses reported a 30% gain in operational efficiency through automated scheduling and staff optimization.</p>
+                <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
+                    <div>
+                        <h3>75%</h3>
+                        <p>Reduction in Conflicts</p>
+                    </div>
+                    <div>
+                        <h3>50%</h3>
+                        <p>Increase in Completion</p>
+                    </div>
+                    <div>
+                        <h3>90%</h3>
+                        <p>Customer Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Raj Varma. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

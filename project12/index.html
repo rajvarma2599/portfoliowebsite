@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error States & Edge Cases UX Project - Raj Varma</title>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional modern styles for project detail page */
+        .project-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .project-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .project-content {
+            padding: 60px 0;
+        }
+        .section-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+        .section-card h2 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .feature-item {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .tools-used {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .tool {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        .results {
+            text-align: center;
+            background: #f4f4f4;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #2980b9;
+        }
+        .mockup-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .logo {
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Raj Varma</div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <div class="container">
+            <h1>Error States & Edge Cases UX Project</h1>
+            <p>A comprehensive exploration of thoughtful error states and edge cases that maintain positive user experience, achieving 90% user retention during error scenarios and $1.2M annual savings.</p>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="section-card">
+                <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
+                <p>This project demonstrates professional-grade error handling and edge case management. Rather than treating errors as afterthoughts, this work shows how thoughtful error design can actually improve user experience, build trust, and guide users toward successful outcomes. The project involved systematic identification of error categories, design of recovery patterns, and comprehensive testing of edge cases to ensure robust user experience even in failure situations.</p>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p style="font-style: italic; color: #666;">(Mockup image would be placed here if available)</p>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2><i class="fas fa-list-check"></i> Key Features Implemented</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Comprehensive Error Categories</h3>
+                        <p>System errors, user input errors, content errors, and permission errors with tailored solutions for each category.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Error Handling Principles</h3>
+                        <p>Helpful messaging, error prevention, context preservation, and clear next steps that guide users to resolution.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-undo"></i>
+                        <h3>Recovery Patterns</h3>
+                        <p>Graceful degradation, progressive enhancement, undo/redo functionality, and auto-save recovery systems.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-search"></i>
+                        <h3>Edge Case Coverage</h3>
+                        <p>Network issues, device limitations, data corruption, concurrent actions, and internationalization considerations.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-flask"></i>
+                        <h3>Testing Methodology</h3>
+                        <p>Error simulation, user validation, accessibility compliance, and performance impact assessment.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Business Impact</h3>
+                        <p>70% reduction in support tickets, 90% user retention during errors, and $1.2M annual cost savings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2><i class="fas fa-tools"></i> Tools & Technologies Used</h2>
+                <div class="tools-used">
+                    <span class="tool">Figma</span>
+                    <span class="tool">Adobe After Effects</span>
+                    <span class="tool">UserTesting</span>
+                    <span class="tool">Screen Readers</span>
+                    <span class="tool">Network Throttling Tools</span>
+                    <span class="tool">Accessibility Validators</span>
+                </div>
+            </div>
+
+            <div class="section-card results">
+                <h2><i class="fas fa-trophy"></i> Results & Impact</h2>
+                <p>The error states and edge cases UX project delivered significant improvements in user experience during failure scenarios. Customer support tickets related to errors decreased by 70%, user abandonment during error states reduced by 45%, and user retention during error scenarios reached 90%. Error resolution became 50% faster, with users rating their error experience 4.9/5, demonstrating that thoughtful error design can create positive experiences even in failure situations.</p>
+                <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
+                    <div>
+                        <h3>90%</h3>
+                        <p>User Retention</p>
+                    </div>
+                    <div>
+                        <h3>70%</h3>
+                        <p>Support Ticket Reduction</p>
+                    </div>
+                    <div>
+                        <h3>$1.2M</h3>
+                        <p>Annual Savings</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Raj Varma. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

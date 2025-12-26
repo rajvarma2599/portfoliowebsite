@@ -57,21 +57,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Visitor Counter
+// Visitor Counter using counter.dev
 async function updateVisitorCount() {
-    const visited = localStorage.getItem('visited');
+    const visited = sessionStorage.getItem('visited');
     if (!visited) {
         try {
-            await fetch('https://api.countapi.xyz/hit/portfolio-visitor-count/visitor-count');
-            localStorage.setItem('visited', 'true');
+            // Increment counter on first visit of the session
+            await fetch('https://counter.dev/api/rajvarma2599/portfolio', {
+                method: 'POST'
+            });
+            sessionStorage.setItem('visited', 'true');
         } catch (error) {
             console.error('Error incrementing count:', error);
         }
     }
+
     try {
-        const response = await fetch('https://api.countapi.xyz/get/portfolio-visitor-count/visitor-count');
+        // Fetch current count
+        const response = await fetch('https://counter.dev/api/rajvarma2599/portfolio');
         const data = await response.json();
-        document.getElementById('visitor-count').textContent = data.value;
+        document.getElementById('visitor-count').textContent = data.count || 0;
     } catch (error) {
         console.error('Error fetching count:', error);
         // Fallback to localStorage if API fails
@@ -208,6 +213,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const rzp = new Razorpay(options);
         rzp.open();
+    });
+});
+
+// Sliding grid functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const containers = document.querySelectorAll('.sliding-grid-container');
+
+    containers.forEach(container => {
+        const gridWrapper = container.querySelector('.grid-wrapper');
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
+
+        let currentSlide = 0;
+        const totalSlides = 2; // 2 slides per container
+
+        function updateSlide() {
+            const translateX = -currentSlide * 100;
+            gridWrapper.style.transform = `translateX(${translateX}%)`;
+        }
+
+        prevBtn.addEventListener('click', function() {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : totalSlides - 1;
+            updateSlide();
+        });
+
+        nextBtn.addEventListener('click', function() {
+            currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : 0;
+            updateSlide();
+        });
+    });
+});
+
+// Project filtering functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            this.classList.add('active');
+
+            const filterValue = this.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const categories = card.getAttribute('data-category').split(' ');
+
+                if (filterValue === 'all' || categories.includes(filterValue)) {
+                    card.style.display = 'block';
+                    // Add animation class for smooth transition
+                    setTimeout(() => card.classList.add('animate-stagger'), 10);
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('animate-stagger');
+                }
+            });
+        });
     });
 });
 
